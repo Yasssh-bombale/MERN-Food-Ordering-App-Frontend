@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import MobileNav from "./MobileNav";
+import { Button } from "./ui/button";
 
 const Header = () => {
   return (
@@ -10,6 +12,15 @@ const Header = () => {
         >
           JevlisKa.com
         </Link>
+        <div className="md:hidden">
+          <MobileNav />
+        </div>
+        <Button
+          variant={"ghost"}
+          className="hidden md:block hover:bg-white hover:text-orange-500 font-bold text-[1.2rem]"
+        >
+          Log in
+        </Button>
       </div>
     </div>
   );
