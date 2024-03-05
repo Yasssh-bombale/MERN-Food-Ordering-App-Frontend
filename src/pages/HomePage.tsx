@@ -10,7 +10,7 @@ const HomePage = () => {
         </h1>
         <span className="text-xl ">Food is just a click away!</span>
       </div>
-      <div className="grid md:grid-cols-2 gap-5 border border-black">
+      <div className="grid md:grid-cols-2 gap-5">
         <img src={phoneImg} alt="phoneImg" />
         <div className="flex flex-col gap-5 justify-center items-center text-center">
           <span className="font-bold text-3xl tracking-tighter">

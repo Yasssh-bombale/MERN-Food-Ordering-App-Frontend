@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import React from "react";
 import hero from "../assets/hero.png";
+import Footer from "@/components/Footer";
 type Props = {
   children: React.ReactNode;
 };
@@ -15,6 +16,7 @@ const Layout = ({ children }: Props) => {
         className="w-full max-h-[600px] object-cover"
       />
       <div className="container mx-auto flex-1 py-10">{children}</div>
+      <Footer />
     </div>
   );
 };
