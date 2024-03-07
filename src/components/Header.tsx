@@ -20,7 +20,7 @@ const Header = () => {
           <MobileNav />
         </div>
 
-        <div className="flex items-center space-x-2">
+        <div className="hidden md:block">
           {isAuthenticated ? (
             <UserNameMenu />
           ) : (
