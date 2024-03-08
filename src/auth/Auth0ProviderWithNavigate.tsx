@@ -1,3 +1,4 @@
+import { useCreateMyUser } from "@/api/MyUserApi";
 import { AppState, Auth0Provider, User } from "@auth0/auth0-react";
 import React from "react";
 
@@ -14,8 +15,12 @@ function Auth0ProviderWithNavigate({ children }: Props) {
     throw new Error("unable to initialize Auth0");
   }
 
+  const { createUser } = useCreateMyUser();
+
   const redirectCallBack = (AppState?: AppState, User?: User) => {
-    console.log("USER", User);
+    if (User?.sub && User?.email) {
+      createUser({ auth0Id: User.sub, email: User.email });
+    }
   };
 
   return (
