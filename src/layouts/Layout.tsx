@@ -25,7 +25,7 @@ const Hero = () => {
     <img
       src={hero}
       alt="heroImg"
-      className="w-full max-h-[600px] object-cover"
+      className="w-full max-h-[500px] object-cover"
     />
   );
 };
