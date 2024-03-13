@@ -6,7 +6,7 @@ const HomePage = () => {
     <div className="flex flex-col gap-12">
       <div className="bg-white rounded-lg shadow-md py-8 -mt-16 text-center flex flex-col gap-5">
         <h1 className="text-5xl text-orange-500 tracking-tight font-bold">
-          Kay Jevlis ka vichartos direct awadtes bol!
+          Tuck into takeway today
         </h1>
         <span className="text-xl ">Food is just a click away!</span>
       </div>
