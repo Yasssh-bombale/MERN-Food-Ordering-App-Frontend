@@ -1,6 +1,8 @@
+import { Form } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import DetailsSection from "./DetailsSection";
 
 const formSchema = z.object({
   restaurantName: z.string({
@@ -50,7 +52,20 @@ const ManageRestaurantForm = ({}: Props) => {
     },
   });
 
-  return <div>ManageRestaurantForm</div>;
+  const onSubmit = (formDataJson: restaurantFormData) => {
+    //TODO: convert a formDataJson to new formDataObject;
+  };
+
+  return (
+    <Form {...form}>
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-8 p-10 bg-gray-50 rounded-lg"
+      >
+        <DetailsSection />
+      </form>
+    </Form>
+  );
 };
 
 export default ManageRestaurantForm;
