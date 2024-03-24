@@ -16,7 +16,7 @@ export default function DetailsSection() {
     <div className="space-y-2">
       <div>
         <h2 className="font-bold text-2xl">Details</h2>
-        <FormDescription>
+        <FormDescription className="text-sm ">
           Enter the details about your restaurant
         </FormDescription>
       </div>
