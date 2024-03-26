@@ -30,7 +30,7 @@ const MobileNav = () => {
               </div>
             ) : (
               <span className="text-sm sm:text-lg ">
-                Welcome to JevlisKa.com!
+                Welcome to MernFoods.com!
               </span>
             )}
           </SheetTitle>

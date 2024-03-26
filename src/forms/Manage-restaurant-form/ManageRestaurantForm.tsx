@@ -41,12 +41,12 @@ const formSchema = z.object({
 
 type restaurantFormData = z.infer<typeof formSchema>;
 
-type Props = {
-  onSave: (restaurantFormData: FormData) => void;
-  isLoading: boolean;
-};
+// type Props = {
+//   onSave: (restaurantFormData: FormData) => void;
+//   isLoading: boolean;
+// };
 
-const ManageRestaurantForm = ({}: Props) => {
+const ManageRestaurantForm = () => {
   const form = useForm<restaurantFormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -55,7 +55,7 @@ const ManageRestaurantForm = ({}: Props) => {
     },
   });
 
-  const onSubmit = (formDataJson: restaurantFormData) => {
+  const onSubmit = (/*formDataJson: restaurantFormData*/) => {
     //TODO: convert a formDataJson to new formDataObject;
   };
 

@@ -14,7 +14,7 @@ const Header = () => {
           to={"/"}
           className="text-3xl tracking-tight font-bold text-orange-500"
         >
-          JevlisKa.com
+          MernFoods.com
         </Link>
         <div className="md:hidden">
           <MobileNav />
