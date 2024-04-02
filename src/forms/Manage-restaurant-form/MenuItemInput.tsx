@@ -14,6 +14,8 @@ type Props = {
   removeMenuItem: () => void;
 };
 
+//menuItems=[{name:"",price:""},{name:"",price:""}];
+
 const MenuItemInput = ({ index, removeMenuItem }: Props) => {
   const { control } = useFormContext();
 
