@@ -1,3 +1,4 @@
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import {
   FormControl,
   FormDescription,
@@ -9,7 +10,9 @@ import { Input } from "@/components/ui/input";
 import { useFormContext } from "react-hook-form";
 
 const ImageSection = () => {
-  const { control } = useFormContext();
+  const { control, watch } = useFormContext();
+
+  const existingImageUrl = watch("imageUrl");
 
   return (
     <div className="space-y-2">
@@ -21,7 +24,16 @@ const ImageSection = () => {
         </FormDescription>
       </div>
 
-      <div className="flex flex-col w-[50%]">
+      <div className="flex flex-col md:w-[50%] space-y-2">
+        {existingImageUrl && (
+          <AspectRatio ratio={16 / 9}>
+            <img
+              src={existingImageUrl}
+              className="rounded-md object-cover h-full w-full"
+              alt="resImg"
+            />
+          </AspectRatio>
+        )}
         <FormField
           name="imageFile"
           control={control}
