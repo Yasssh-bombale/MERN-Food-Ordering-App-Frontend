@@ -31,6 +31,7 @@ const SearchBar = ({ onSubmit, onReset, placeHolder, searchQuery }: Props) => {
   });
 
   useEffect(() => {
+    // Whenever component recives an searchQuery as prop useEffect will render whole component and reset form with defualt value as searchQuery
     form.reset({ searchQuery });
   }, [form, searchQuery]);
 
