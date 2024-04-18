@@ -4,6 +4,7 @@ import PaginationSelector from "@/components/PaginationSelector";
 import SearchBar, { SearchForm } from "@/components/SearchBar";
 import SearchPageInfo from "@/components/SearchPageInfo";
 import SearchResultCard from "@/components/SearchResultCard";
+import SortOptionDropdown from "@/components/SortOptionDropdown";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -11,6 +12,7 @@ export type searchState = {
   searchQuery: string;
   page: number;
   selectedCuisines: string[];
+  sortOption: string;
 };
 
 const SearchPage = () => {
@@ -23,10 +25,19 @@ const SearchPage = () => {
   const [serachState, setSearchState] = useState<searchState>({
     searchQuery: "",
     selectedCuisines: [],
+    sortOption: "lastUpdated",
     page: 1,
   });
 
   const { result, isLoading } = useSearchRestaurant(serachState, city);
+
+  const setSortOptions = (sortOption: string) => {
+    setSearchState((prevState) => ({
+      ...prevState,
+      sortOption,
+      page: 1,
+    }));
+  };
 
   const setSelectedCuisines = (selectedCuisines: string[]) => {
     setSearchState((prevState) => ({
@@ -83,7 +94,14 @@ const SearchPage = () => {
           placeHolder="Search by cuisine or Restaurant name"
           onReset={resetSearch}
         />
-        <SearchPageInfo total={result.pagination.total} city={city} />
+        <div className="flex flex-col lg:flex-row justify-between items-center">
+          <SearchPageInfo total={result.pagination.total} city={city} />
+          <SortOptionDropdown
+            onChange={setSortOptions}
+            sortOption={serachState.sortOption}
+          />
+        </div>
+
         {result.data.map((restaurant) => (
           <SearchResultCard key={restaurant._id} restaurant={restaurant} />
         ))}
