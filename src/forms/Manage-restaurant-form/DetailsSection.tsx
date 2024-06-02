@@ -66,7 +66,7 @@ export default function DetailsSection() {
         name="deliveryPrice"
         render={({ field }) => (
           <FormItem className="max-w-[25%]">
-            <FormLabel>Delivery price (£)</FormLabel>
+            <FormLabel>Delivery price ($)</FormLabel>
             <FormControl>
               <Input placeholder="1.50" {...field} className="bg-white" />
             </FormControl>
